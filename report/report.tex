@@ -1,0 +1,79 @@
+%\documentclass{llncs}
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage[portuguese]{babel}	% Portuguese
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{indentfirst}
+\usepackage{colortbl} % Permite o uso de cores em tabelas
+\usepackage{url}
+\usepackage{listings} % Permite inserir codigo
+\usepackage[title,titletoc]{appendix} 
+ 
+\renewcommand{\labelitemi}{$\bullet$}
+
+\renewenvironment{quote}{%
+  \list{}{%
+    \leftmargin3.0cm   % this is the adjusting screw
+    \rightmargin\leftmargin
+  }
+  \item\relax
+}
+{\endlist}
+
+\begin{document}
+
+\begin{figure}[!t]
+\centering 
+\includegraphics[width=15.5cm]{images/logo.pdf}
+\end{figure}
+
+\title{Comparação das Soluções para o Exercício Prático I.\\
+		Problema dos Missionários e Canibais}
+\author{Mariana Ramos Franco}
+% \institute{Escola Politécnica da Universidade de São Paulo \\ Departamento de Engenharia de Computação e Sistemas Digitais \\ PCS 5703 - Sistemas Multi-Agentes}
+% \institute{PCS 5703 - Sistemas Multi-Agentes}
+\date{9 de Abril}
+
+\maketitle
+
+
+\section{Enunciado do Exercício Prático}
+
+O exercício prático envolve a programação da solução de um problema de busca (n-rainhas, missionarios e canibais, n-puzzle etc…)
+\begin{itemize}
+\item numa linguagem procedural (especifique qual foi a linguagem escolhida)
+\item em Prolog.
+\end{itemize}
+e a comparação das soluções, destacando prós e contras de cada uma delas.
+
+
+\section{O Problema}
+
+Para este exercício foi escolhido o problema dos missionários e canibais. Neste problema, três missionários e três canibais devem atravessar um rio com um barco que pode transportar no máximo duas pessoas, sob a restrição de que, para ambas as margens, se há missionários presentes naquela margem, eles não podem ser ultrapassados pelo número de canibais na mesma margem (se fossem, os canibais comeriam os missionários.) O barco não pode atravessar o rio por si só, sem pessoas a bordo.
+
+\section{Comparação das soluções}
+
+O problema foi resolvido utilizando-se 3 linguagens diferentes: Java, Python e Prolog.
+
+\paragraph{}
+
+A resolução em Java e Python são bastante parecidas. Para resolver o problema foi criado uma classe "State" que guarda o estado atual do problema: quantos missionários e canibais em cada lado do rio e em qual margem se encontra o barco. Um método "generateSuccessors" (ou "successors" na versão em Python) verifica quais as ações válidas para um determinado estado e retorna os possíveis estados sucessores.
+
+O estado inicial do problema é passado como entrada para o algoritmo de busca em largura (classe "BreadthFirstSearch" da versão em Java ou método "breadth\underline{ }first\underline{ }search" da versão em Python) que retorna a solução para o problema.
+
+\paragraph{}
+
+Na solução em Prolog foi preciso definir as 10 regras que determinavam qual o estado sucessor de um estado para cada uma das possíveis ações e a regra recursiva "path" responsável por encontrar a solução do problema.
+
+\paragraph{}
+
+Nota-se que a solução em Prolog é a menos verbosa (em menos de 100 linha foi possível resolver o problema) se comparada com as soluções em Java e Python. Além disso, apesar da falta de experiência com a linguagem, a solução em Prolog foi rapidamente desenvolvida, pois:
+
+\begin{itemize}
+\item a linguagem é de fácil aprendizado
+\item e permite que o programador se concentre nos aspectos lógicos do problema a ser resolvido, ficando a cargo do sistema computacional a gerência dos mecanismos de busca das possíveis soluções.
+\end{itemize}
+
+\end{document}
+

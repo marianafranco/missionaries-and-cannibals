@@ -1,0 +1,32 @@
+##########################################
+## Missionaries and Cannibals Problem 	##
+##										##
+## author: Mariana Ramos Franco			##
+##########################################
+
+missionaries_and_cannibals.zip
+  -- java:
+  		-- src: the source folder
+  		-- missionaries_and_cannibals.jar: the executable binaries
+  -- prolog:
+  		-- missionaries_and_cannibals.pl
+  -- python:
+  		-- missionaries_and_cannibals.py
+  -- report:
+  		-- report.pdf: the report with the comparison of the solutions
+
+
+To run the Java version:
+-------------------------
+> java -jar missionaries_and_cannibals.jar
+
+
+To run the Prolog code in SWI-Prolog:
+-------------------------------------
+?- ['missionaries_and_cannibals.pl'].
+?- find.
+
+
+To run the Python version:
+--------------------------
+> python missionaries_and_cannibals.py
