@@ -66,6 +66,9 @@ class State():
 		else:
 			return False
 
+	def reduce_state(self):
+		return "{}{}{}{}{}".format(self.missionaryLeft,self.missionaryRight,self.boat,self.cannibalLeft,self.cannibalRight)
+
 def successors(cur_state):
 	children = [];
 	if cur_state.boat == 'left':
@@ -143,10 +146,10 @@ def breadth_first_search():
 		state = frontier.pop()
 		if state.is_goal():
 			return state
-		explored.add(state)
+		explored.add(state.reduce_state())
 		children = successors(state)
 		for child in children:
-			if (child not in explored) or (child not in frontier):
+			if child not in explored:
 				frontier.append(child)
 	return None
 
